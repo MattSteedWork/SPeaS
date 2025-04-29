@@ -1,7 +1,7 @@
 # PowerShellPeas-Pro-v2.ps1
 # Full Advanced WinPEAS Clone (Fixed)
 
-Write-Host "====== PowerShellPeas-Pro-v2 Starting ======"
+Write-Host "====== SPeaS Starting ======"
 
 # Check if Admin
 function Check-Admin {
