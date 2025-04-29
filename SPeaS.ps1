@@ -1,4 +1,4 @@
-# PowerShellPeas-Pro-v2.ps1
+#SPeaS.ps1
 # Full Advanced WinPEAS Clone (Fixed)
 
 Write-Host "====== SPeaS Starting ======"
@@ -130,21 +130,6 @@ try {
         }
     }
 } catch { Write-Host "[-] Error checking service ACLs." }
-
-<# # Searching for Credentials
-Write-Host "`n[*] Searching Files for Credentials:"
-$interesting = @("*.config", "*.ini", "*.xml", "*.txt", "*.bat", "*.ps1")
-foreach ($pattern in $interesting) {
-    try {
-        Get-ChildItem -Path C:\ -Include $pattern -Recurse -ErrorAction SilentlyContinue |
-        Where-Object { $_.Length -lt 3MB } |
-        ForEach-Object {
-            if (Select-String -Path $_.FullName -Pattern "password|user|credential" -SimpleMatch -Quiet) {
-                Write-Host "[!] Possible credential in: $($_.FullName)"
-            }
-        }
-    } catch {}
-} #>
 
 # Registry Credential Hunt
 Write-Host "`n[*] Searching Registry for Stored Credentials:"
