@@ -41,8 +41,6 @@ function Check-Users {
 function Check-Credentials {
     Write-Host "`n[+] Stored Credentials (cmdkey)" -ForegroundColor Cyan
     cmdkey /list
-    Write-Host "`n[+] Credential Manager Entries" -ForegroundColor Cyan
-    Get-StoredCredential -ErrorAction SilentlyContinue
     Write-Host "`n[+] DPAPI Master Keys (Roaming)" -ForegroundColor Cyan
     Get-ChildItem "$env:APPDATA\Microsoft\Protect" -Recurse -ErrorAction SilentlyContinue
     Write-Host "`n[+] DPAPI Master Keys (Local)" -ForegroundColor Cyan
